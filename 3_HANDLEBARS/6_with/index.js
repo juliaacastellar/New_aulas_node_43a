@@ -10,6 +10,16 @@ app.set('view engine', 'handlebars')
 
 // rotas
 
+app.get('/post', (req, res) => {
+    const post = {
+        title: 'Aprender node.js',
+        category: 'javascript',
+        body: "Este artigo vai te ajudar a aprender Node.js",
+        comments: 4
+    }
+
+    res.render('post', {post})
+})
 app.get('/dashboard', (req,res) => {
     const items = ['item a', 'item b', 'item c']
     res.render('dashboard', {items})
